@@ -1,0 +1,277 @@
+:root {
+    --bg: #000000;
+    --th: #00fbff;
+    --sc: #000000;
+    --at: #ffffff;
+
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    font-size: 12px;
+    font-family: monospace;
+}
+
+body {
+    margin: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--bg);
+}
+
+a {
+    text-decoration: none;
+}
+
+.wrapper {
+    max-width: 560px;
+    width: 100%;
+    margin: 1rem auto;
+}
+
+/* header */
+.header {
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+/* header col */
+.header-col {
+    width: 100%;
+}
+
+/* header title */
+.header-title {
+    border-top-left-radius: 0.5rem;
+    position: relative;
+    z-index: 1;
+    background-color: var(--th);
+    color: var(--sc);
+    text-shadow: 0 5px 0 rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+    padding: 0.85rem 1.5rem 0.85rem 1rem;
+    text-shadow: 0px 3px --sc;
+    font-size: 16px;
+}
+
+.header-title::after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-top: 12px solid transparent;
+    border-bottom: 0px solid transparent;
+    border-right: 12px solid var(--bg);
+
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+/* header menu */
+.header-menu {
+    border-top-right-radius: 0.5rem;
+    background-color: var(--th);
+    padding: 0rem 0.5rem;
+    display: flex;
+    gap: 0.75rem;
+    pointer-events: none
+}
+
+.header-menu a {
+    padding: 0.25rem;
+    border-bottom: 2px solid transparent;
+    color: var(--bg);
+}
+
+.header-menu a:hover {
+    color: white;
+}
+
+.header-menu a.active {
+    color: var(--at);
+    border-bottom-color: var(--at);
+}
+
+/* main */
+.main {
+    display: flex;
+}
+
+/* main content */
+.main-content {
+    flex-grow: 1;
+    min-height: 10rem;
+    position: relative;
+    border: 1px solid var(--th);
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+
+    padding: 1rem 1rem;
+}
+
+.main-content p {
+    color: #6af6f9;
+}
+
+.main-content p q {
+    display: block;
+    color: var(--th);
+    padding-top: 5px;
+}
+
+.main-content::after {
+    content: ' Arquivos Marauder';
+    color: var(--th);
+    font-size: 10px;
+
+    width: 49%;
+    height: 1rem;
+    background-color: var(--bg);
+    border-right: 1px solid var(--th);
+    border-top: 1px solid var(--th);
+
+    position: absolute;
+    bottom: 100%;
+    right: -1px;
+}
+
+.main-content::before {
+    content: '';
+
+    width: 1px;
+    height: 16px;
+    background-color: var(--th);
+    transform: rotate(45deg);
+
+    position: absolute;
+    right: 226px;
+    top: -15px;
+}
+
+.main-pattern {
+    width: 100%;
+    height: 1rem;
+
+    background: repeating-linear-gradient(to bottom right,
+            transparent 0%,
+            transparent 33%,
+            var(--th) 33%,
+            var(--th) 66%,
+            transparent 66%,
+            transparent 100%);
+    background-size: 15px 15px;
+    animation: animate 300ms linear infinite;
+}
+
+@keyframes animate {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 15px 0;
+    }
+}
+
+/* main files */
+.main-files {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1%;
+    padding-left: 1rem;
+}
+
+.main-files p {
+    color: var(--th);
+    position: relative;
+}
+
+.main-files a {
+    font-size: 20px;
+    color: var(--th);
+    position: relative;
+    margin-top: 10px;
+}
+
+.main-files button {
+    font-size: 20px;
+    color: var(--th);
+    position: relative;
+    margin-top: 10px;
+    background-color: transparent;
+    border-color: transparent;
+
+}
+
+.main-files button:hover:after {
+    content: '';
+    width: 2rem;
+    height: 1rem;
+    background-color: var(--th);
+    position: absolute;
+    top: 100%;
+    right: 0;
+}
+
+.main-files button:hover::before {
+    content: '';
+    border-top: 0px solid transparent;
+    border-bottom: 12px solid transparent;
+    border-right: 12px solid var(--th);
+    position: absolute;
+    top: 100%;
+    right: 24px;
+}
+
+.main-files button:hover {
+    background-color: var(--th);
+    color: var(--bg);
+}
+
+
+.main-files a:hover::after {
+    content: '';
+    width: 2rem;
+    height: 1rem;
+    background-color: var(--th);
+    position: absolute;
+    top: 100%;
+    right: 0;
+}
+
+.main-files a:hover::before {
+    content: '';
+    border-top: 0px solid transparent;
+    border-bottom: 12px solid transparent;
+    border-right: 12px solid var(--th);
+    position: absolute;
+    top: 100%;
+    right: 24px;
+}
+
+.main-files a:hover {
+    background-color: var(--th);
+    color: var(--bg);
+}
+
+
+/*
+trocar a introdução pelos objetivos
+*/
+
+.inicio-passivo {
+    display: none;
+}
+
+.inativar {
+    display: none;
+}
+
+.ativar {
+    display: block;
+}
