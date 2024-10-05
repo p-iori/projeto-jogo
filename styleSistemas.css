@@ -268,6 +268,7 @@ Sistemas
 
 
 .hide {
+    display: none;
     opacity: 0;
 }
 
@@ -303,6 +304,7 @@ Sistemas
     color: var(--th);
     margin-top: 35%;
     margin-left: 49%;
+    opacity: 1;
     transition-duration: 0.6s;
 }
 
@@ -329,6 +331,7 @@ Sistemas
     color: var(--th);
     margin-top: 25%;
     margin-left: 70%;
+    opacity: 1;
     transition-duration: 0.6s;
 }
 
