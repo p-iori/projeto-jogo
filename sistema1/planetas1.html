@@ -40,9 +40,19 @@
         </div>
     </div>
 
+    <img class="estrela" tabindex="0" src="../imgs/estrela-amarela.png"></img>
 
-    <!-- PLANO DE FUNDO -->
+    <div class="planetas">
+        <button class="planeta-ind"></button>
+        <button class="planeta-ind"></button>
+        <button class="planeta-ind"></button>
+        <button class="planeta-ind"></button>
+        <button class="planeta-ind"></button>
+    </div>
 
+
+    <!--PLANO DE FUNDO-->
+    
     <div class="bg"></div>
     <div class="star-field">
         <div class="layer"></div>
@@ -51,8 +61,8 @@
         <div class="layer"></div>
         <div class="layer"></div>
         <div class="altLayer"></div>
+        <div class="planetasLayer"></div>
     </div>
-
 
     <!-- JSQUERY/POPPER/BOOTSTRAP -->
 
@@ -65,13 +75,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+    <script src="planetas1.js"></script>
 </body>
-
-<script>
-    //Mostrar o modal ao carregar a página
-    $(window).on('load', function () {
-        $('#myModal').modal('show');
-    });
-</script>
 
 </html>
