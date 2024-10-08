@@ -172,7 +172,7 @@ Posição e cor das estrelas
 }
 
 .star-field .planetasLayer {
-    box-shadow: -550px -100px #fff, -350px 50px #fff, 200px -110px #fff, 106px 145px #fff, -99px -50px #fff;
+    box-shadow: -550px -100px #fff, -350px 50px #fff, 200px -110px #fff, 106px 105px #fff, -99px -50px #fff;
     transform-style: preserve-3d;
     position: absolute;
     top: 50%;
@@ -279,6 +279,81 @@ Estilo do Modal
 
 
 
+/*
+Objetivos
+*/
+
+.menu-objetivos {
+    background-color: var(--bg);
+    color: var(--th);
+    text-align: left;
+    font-family: monospace;
+    font-size: 15px;
+    outline: none;
+    border: 1px solid var(--th);
+    border-top: none;
+    border-bottom-right-radius: 4px;
+    padding: 5px 25px;
+    cursor: pointer;
+}
+
+.menu-objetivos:after {
+    content: '';
+    width: 2rem;
+    height: 1rem;
+    background-color: var(--bg);
+    position: absolute;
+    border: 1px solid var(--th);
+    border-top: none;
+    top: 4.8%;
+    left: 9.6%;
+}
+
+.menu-objetivos:before {
+    content: '';
+    border: 1px solid var(--th);
+    border-top: 0px solid transparent;
+    border-bottom: 12px solid transparent;
+    border-right: 12px solid var(--th);
+    position: absolute;
+    top: 5.09%;
+    left: 8.65%;
+}
+
+.menu-objetivos:hover:after {
+    content: '';
+    width: 2rem;
+    height: 1rem;
+    background-color: var(--th);
+    position: absolute;
+    top: 4.5%;
+    left: 9.6%;
+}
+
+.menu-objetivos:hover::before {
+    content: '';
+    border-top: 0px solid transparent;
+    border-bottom: 12px solid transparent;
+    border-right: 12px solid var(--th);
+    position: absolute;
+    top: 5.09%;
+    left: 8.65%;
+}
+
+.active,
+.menu-objetivos:hover {
+    background-color: var(--th);
+    color: #000000;
+}
+
+.content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: var(--bg);
+}
+
+
 
 /*
 Estrela e planetas
@@ -290,8 +365,8 @@ Estrela e planetas
     position: fixed;
     top: 0%;
     left: 70%;
-    width: 600px;
-    height: 600px;
+    width: 300px;
+    height: 300px;
     border-radius: 50%;
 }
 
@@ -339,17 +414,37 @@ Estrela e planetas
 }
 
 .planetas .planeta-ind {
-    width: 14%;
     display: inline-block;
     border: 1px solid var(--th);
-    border-top-right-radius: 5px;
-    border-top-left-radius: 5px;
-    padding: 60px 80px;
+    border-radius: 4px;
+    padding: 65px 80px;
     color: var(--th);
     background-color: var(--bg);
+    background-size: 100px 100px;
+    cursor: pointer;
 }
 
 .planetas .planeta-ind:nth-child(1) {
-    background-image: url(../imgs/estrela-amarela.png);
-    background-size: cover;
+    background: url(../imgs/planeta-1.png) no-repeat;
+    background-position: center;
+}
+
+.planetas .planeta-ind:nth-child(2) {
+    background: url(../imgs/planeta-2.png) no-repeat;
+    background-position: center;
+}
+
+.planetas .planeta-ind:nth-child(3) {
+    background: url(../imgs/planeta-3.png) no-repeat;
+    background-position: center;
+}
+
+.planetas .planeta-ind:nth-child(4) {
+    background: url(../imgs/planeta-4.png) no-repeat;
+    background-position: center;
+}
+
+.planetas .planeta-ind:nth-child(5) {
+    background: url(../imgs/planeta-5.png) no-repeat;
+    background-position: center;
 }
