@@ -309,42 +309,6 @@ Objetivos
     border-top: none;
 }
 
-.menu-objetivos:focus::before {
-    content: '';
-
-    width: 1px;
-    height: 45px;
-    background-color: var(--th);
-    transform: rotate(45deg);
-
-    position: absolute;
-    left: 13.97%;
-    top: -1%;
-}
-
-.menu-objetivos::before {
-    content: '';
-
-    width: 1px;
-    height: 45px;
-    background-color: var(--th);
-    transform: rotate(45deg);
-    position: absolute;
-    left: 13.97%;
-    top: -1%;
-}
-
-.menu-objetivos:hover:after {
-    content: '';
-    border: 0px solid var(--th);
-    border-top: 0px solid transparent;
-    border-bottom: 32px solid transparent;
-    border-left: 32px solid var(--th);
-    position: absolute;
-    top: 0%;
-    left: 12.55%;
-}
-
 .ativo,
 .menu-objetivos:hover {
     background-color: var(--th);

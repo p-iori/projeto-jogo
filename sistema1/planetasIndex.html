@@ -30,28 +30,27 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    Cada planeta possui diferentes características, alguns deles são mais perigosos que outros, então
-                    preciso escolher com cuidado. O banco de dados da nave deve mostrar as informações de cada um deles
-                    para facilitar a escolha.
+                    Ao me aproximar do sistema, percebo uma quantidade muito grande de nuvens de destroços metálicos do
+                    mesmo tipo daqueles
+                    que atingiram minha nave. Talvez eu deva investigar os planetas (onde a maioria dos destroços
+                    grandes caiu) para encontrar pistas sobre o paradeiro das naves humanas e sobre a origem desses
+                    destroços desconhecidos.
                 </div>
                 <div class="modal-footer">
-                    *Coloque o mouse sobre um planeta para ver as informações sobre ele. 
-                    Escolha os planetas que quer visiar a partir dos recursos disponíveis e da dificuldade, você pode
-                    ver os recursos necessários pelo menu de objetivos no canto da tela.
+                    *Coloque o mouse sobre os planetas apresentados no menu da nave para ver suas informações. Cada
+                    planeta possui tarefas diferentes que podem leva-lo(a) a pistas que, juntas, revelam as coordenadas
+                    da frota humana. Clique no ícone no canto superior esquerdo da tela para inserir as
+                    coordenadas da frota humana quando estiver pronto(a).
                 </div>
             </div>
         </div>
     </div>
 
     <div class="objetivos">
-        <button class="menu-objetivos">Meus Objetivos</button>
+        <button class="menu-objetivos">Inserir Coordenadas</button>
         <div class="content">
-            <p> • [Estabilizadores] - Platina<br>
-                • [Navegadores] - Magnésio<br>
-                • [Sistemas de refrigeração] - Água líquida<br>
-                • [Sistemas de propulsão] - Nióbio<br>
-                • [Sistemas elétricos] - Cobre<br><br>
-            </p>
+            <input type="text" placeholder="Exemplo: 123-xxxx-45" maxlength="11" id="coordenadas" autocomplete="off">
+            <input type="submit" value="Enter" id="enter">
         </div>
     </div>
 
@@ -90,10 +89,10 @@
         </button>
         <button class="planeta-ind" id="planeta4">
             <h1 class="planeta4 hide">
-                Planeta 4 - Continentes Verdes -><br>
+                Planeta 4 - Atmosfera Escassa -><br>
 
                 [Risco] - Baixo<br>
-                [Temperatura] - 26°C<br>
+                [Temperatura] - -126°C<br>
                 [Tipo] - Rochoso<br>
                 [Recursos] - Niobio<br>
             </h1>
