@@ -21,19 +21,21 @@ $(window).on('load', function () {
 });
 
 //Redireciona o usuário para o planeta escolhido
+
+
  btnPlanetas.forEach(button => {
     button.addEventListener('click', function(){
-     const numeroPlaneta = this.getAttribute('data-ind');
+     const dataPlaneta = this.getAttribute('data-ind');
 
-     if(numeroPlaneta == 1){
+     if(dataPlaneta == 1){
         location.replace('./planetas/planeta1.html');
-     } else if(numeroPlaneta == 2){
+     } else if(dataPlaneta == 2){
         location.replace('./planetas/planeta2.html');
-     } else if(numeroPlaneta == 3){
+     } else if(dataPlaneta == 3){
         location.replace('./planetas/planeta3.html');
-     } else if(numeroPlaneta == 4){
+     } else if(dataPlaneta == 4){
         location.replace('./planetas/planeta4.html');
-     } else if(numeroPlaneta == 5){
+     } else if(dataPlaneta == 5){
         location.replace('./planetas/planeta5.html');
      } else {
         console.log("alguma coisa deu muito errado")
