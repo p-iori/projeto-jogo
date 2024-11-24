@@ -23,18 +23,19 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">
-                        Como prosseguir?
+                        Um pouso turbulento...
                     </h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span class="fechar" aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    Me aproximando do planeta, recebo dados da nave que indicam
+                    Ao me aproximar do planeta recebo um sinal da minha nave indicando um grande objeto metálico
+                    localizado próximo ao equador, talvez ele me ajude a descobrir o que aconteceu por aqui.
                 </div>
                 <div class="modal-footer">
-                    *Coloque o mouse sobre os planetas apresentados no menu da nave para ver suas informações. Clique
-                    sobre o planeta escolhido para visita-lo.
+                    *A partir daqui, você enfrentará decisões e desafios variados. Leia os textos com atenção e escolha
+                    com cuidado, já que escolhas erradas podem te fazer voltar ao inicio do planeta.
                 </div>
             </div>
         </div>
@@ -42,9 +43,39 @@
 
     <main>
         <div class="passo ativo" id="passo-0">
-            <p>teste</p>
-            <button class="btn-proximo" data-proximo="1">Rio de Janeiro</button>
-            <button class="btn-proximo" data-proximo="2">Pernambuco</button>
+            <img src="../../imgs/paisagens/paisagemPlaneta1.png" alt="">
+            <p>Ao me aproximar, percebo que o objeto metálico se trata, na verdade, de uma nave caída, que se parece
+                muito com uma das naves de escolta humana. Essas naves fora projetadas para acompanhar as grandes naves
+                de evacuação e auxiliar em caso de emergência, essa em específico é um modelo SR-1, com 3 andares e 60
+                metros de comprimento. Não vejo cadaveres, mas ela parece ter sido atingida por
+                algo que causou um grande buraco na fuselagem. O que devo fazer?</p>
+            <button class="btn-proximo" data-proximo="1">[Entrar na nave para investigar]</button>
+            <button class="btn-proximo" onclick="sairDoPlaneta()">[Voltar para órbita]</button>
+        </div>
+        <div class="passo" id="passo-1">
+            <img src="../../imgs/navecaida.png" alt="">
+            <p>Após entrar na nave por uma janela quebrada, me encontro no hall principal, completamente destruído pela
+                queda...</p>
+            <button class="btn-proximo" data-proximo="2">[Ir para a cabine de comando]</button>
+            <button class="btn-proximo" data-proximo="buraco">[Ir para o buraco na fuselagem]</button>
+        </div>
+
+        <!--Buraco na fuselagem-->
+        <div class="passo" id="passo-buraco">
+            <img src="../../imgs/navecaida.png" alt="">
+            <p>Me dirigo ao buraco na fuselagem, próximo aos motores. Rapidamente percebo que provavelmente ele não foi
+                causado por uma colisão, e sim por algo que atravessou a nave. O que poderia ter acontecido aqui?</p>
+            <button class="btn-proximo" data-proximo="2">[Ir para a cabine de comando]</button>
+        </div>
+
+        <div class="passo" id="passo-2">
+            <img src="../../imgs/navecaida.png" alt="">
+            <p>Sigo para a cabine de comando, lá ficam armazenados os dados de navegação, assim como as caixas-pretas da
+                nave. Ao abrir a porta, emperrada, com certa dificuldade, me deparo com algumas telas ligadas em um
+                painel funcionando a partir da geradores de emergência. Aparentemente se trata do sistema de navegação
+                da nave, que deve conter os logs mais recentes de navegação, incluindo as coordenadas inseridas como
+                destino da frota que essa nave escoltava. </p>
+            <button class="btn-proximo" data-proximo="3">[Procurar pelos dados]</button>
         </div>
     </main>
 

@@ -5,7 +5,11 @@ avanca.forEach(button => {
         const atual = document.querySelector('.ativo');
         const proximoPasso = 'passo-' + this.getAttribute('data-proximo');
 
-        atual.classList.remove('ativo');
-        document.getElementById(proximoPasso).classList.add('ativo');
+        atual.classList.toggle('ativo');
+        document.getElementById(proximoPasso).classList.toggle('ativo');
     })
 })
+
+function sairDoPlaneta() {
+    location.replace('../planetasIndex.html');
+}

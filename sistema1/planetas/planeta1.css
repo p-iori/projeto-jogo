@@ -1,6 +1,7 @@
 :root {
     --bg: transparent;
     --th: #00fbff;
+    --sc: #000000;
 
 }
 
@@ -11,10 +12,10 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-image: url(../../imgs/paisagens/paisagemPlaneta1.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    text-align: center;
+    background-color: var(--sc);
+    color: var(--th);
+    font-family: monospace;
 }
 
 
@@ -86,3 +87,41 @@ Estilo do Modal
     text-decoration: none;
 }
 
+
+/*
+ESTILO DA PAGINA
+*/
+
+.btn-proximo {
+    border: 1px solid var(--th);
+    background-color: var(--bg);
+    color: var(--th);
+    padding: 18px 98px;
+
+
+    &:hover {
+        background-color: var(--th);
+        color: var(--sc);
+    }
+}
+
+.passo {
+    display: none;
+}
+
+.passo.ativo {
+    display: block;
+    align-items: center;
+
+    & p {
+        padding: 2% 10%;
+        left: 50%;
+    }
+}
+
+img {
+    max-width: 55%;
+    padding: 2px;
+    border: 1px solid var(--th);
+    border-radius: 0px 2px 0px 2px;
+}
