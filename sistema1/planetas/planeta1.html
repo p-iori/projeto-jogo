@@ -42,7 +42,7 @@
     </div>
 
     <main>
-        <div class="passo ativo" id="passo-0">
+        <div class="passo" id="passo-0">
             <img src="../../imgs/paisagens/paisagemPlaneta1.png" alt="">
             <p>Ao me aproximar, percebo que o objeto metálico se trata, na verdade, de uma nave caída, que se parece
                 muito com uma das naves de escolta humana. Essas naves fora projetadas para acompanhar as grandes naves
@@ -71,11 +71,30 @@
         <div class="passo" id="passo-2">
             <img src="../../imgs/navecaida.png" alt="">
             <p>Sigo para a cabine de comando, lá ficam armazenados os dados de navegação, assim como as caixas-pretas da
-                nave. Ao abrir a porta, emperrada, com certa dificuldade, me deparo com algumas telas ligadas em um
+                nave. Ao abrir a porta emperrada, com certa dificuldade, me deparo com algumas telas ligadas em um
                 painel funcionando a partir da geradores de emergência. Aparentemente se trata do sistema de navegação
                 da nave, que deve conter os logs mais recentes de navegação, incluindo as coordenadas inseridas como
                 destino da frota que essa nave escoltava. </p>
-            <button class="btn-proximo" data-proximo="3">[Procurar pelos dados]</button>
+            <button class="btn-proximo" data-proximo="3">[Investigar as telas]</button>
+        </div>
+
+        <div class="passo" id="passo-buraco">
+            <img src="../../imgs/navecaida.png" alt="">
+            <p>Me dirigo ao buraco na fuselagem, próximo aos motores. Rapidamente percebo que provavelmente ele não foi
+                causado por uma colisão, e sim por algo que atravessou a nave. O que poderia ter acontecido aqui?</p>
+            <button class="btn-proximo" data-proximo="2">[Ir para a cabine de comando]</button>
+        </div>
+
+        <div class="passo ativo" id="passo-3">
+            <div id="terminal">
+            </div>
+            <p>Ao me aproximar das telas percebo um painel muito parecido com o presente na minha nave, rapidamente
+                alcanço o botão verde que, por padrão, é o responsável por reiniciar os sistemas nas naves construídas
+                durante a era da grande evacuação. Ao pressiona-lo, as telas (que não foram destruídas pela queda) ao
+                meu redor se apagam, apenas para acenderem novamente, exibindo uma espécie de terminal. Aparentemente
+                boa parte dos dados foram perdidos durante esse estranho incidente, mas talvez eu possa pesquisar pelas
+                últimas coordenadas inseridas na navegação, que me dariam o destino da frota humana.</p>
+            <button class="btn-proximo" data-proximo="2">[Ir para a cabine de comando]</button>
         </div>
     </main>
 
@@ -90,11 +109,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
-    <script src="ativaPassos.js"></script>
-    <script>
-        $(window).on('load', function () {
-            $('#myModal').modal('show');
-        });
+    <script src="scriptPlanetas.js"></script>
+    <script>/*
+$(window).on('load', function () {
+    $('#myModal').modal('show');
+});*/
     </script>
 </body>
 

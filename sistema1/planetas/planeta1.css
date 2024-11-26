@@ -116,6 +116,7 @@ ESTILO DA PAGINA
     & p {
         padding: 2% 10%;
         left: 50%;
+        text-align: left;
     }
 }
 
@@ -124,4 +125,12 @@ img {
     padding: 2px;
     border: 1px solid var(--th);
     border-radius: 0px 2px 0px 2px;
+}
+
+#terminal {
+    margin: 2% 0 2% 35%;
+    letter-spacing: 4px;
+    font-weight: bold;
+    text-align: left;
+    align-items: center;
 }
