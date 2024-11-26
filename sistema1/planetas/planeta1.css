@@ -105,6 +105,22 @@ ESTILO DA PAGINA
     }
 }
 
+.btn-subpasso {
+    border: 1px solid var(--th);
+    background-color: var(--bg);
+    color: var(--th);
+    padding: 18px 98px;
+    position: absolute;
+    top: 80%;
+    left: 34%;
+
+
+    &:hover {
+        background-color: var(--th);
+        color: var(--sc);
+    }
+}
+
 .passo {
     display: none;
 }
@@ -120,6 +136,18 @@ ESTILO DA PAGINA
     }
 }
 
+.subpasso {
+    display: none;
+}
+
+.subpasso.ativo {
+    display: block;
+}
+
+.inativo {
+    display: none;
+}
+
 img {
     max-width: 55%;
     padding: 2px;
@@ -133,4 +161,28 @@ img {
     font-weight: bold;
     text-align: left;
     align-items: center;
+    
+}
+
+.inserirSenha {
+    position: absolute;
+    top: 90%;
+    left: 42%;
+
+    & #inputSenha {
+        background-color: var(--bg);
+        color: var(--th);
+        border: 1px solid var(--th);
+    }
+
+    & #enter {
+        background-color: var(--bg);
+        color: var(--th);
+        border: 1px solid var(--th);
+
+        &:hover {
+            background-color: var(--th);
+            color: #000000;
+        }
+    }
 }

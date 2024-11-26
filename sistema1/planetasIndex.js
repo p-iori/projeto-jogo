@@ -46,6 +46,12 @@ $(window).on('load', function () {
 //Confere as coordenadas
 document.getElementById('enter').addEventListener('click', confereCoord);
 
+document.getElementById('coordenadas').addEventListener('keypress', function(e){
+    if(e.key === 'Enter'){
+        confereCoord()
+    }
+});
+
 function confereCoord(){
     let coordInput = document.getElementById('coordenadas');
     let coord = coordInput.value;

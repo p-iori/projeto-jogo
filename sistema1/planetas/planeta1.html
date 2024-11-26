@@ -47,7 +47,8 @@
             <p>Ao me aproximar, percebo que o objeto metálico se trata, na verdade, de uma nave caída, que se parece
                 muito com uma das naves de escolta humana. Essas naves fora projetadas para acompanhar as grandes naves
                 de evacuação e auxiliar em caso de emergência, essa em específico é um modelo SR-1, com 3 andares e 60
-                metros de comprimento. Não vejo cadaveres, mas ela parece ter sido atingida por
+                metros de comprimento, pelas inscrições na lateral, ela foi batizada de Normandy. Não vejo cadaveres,
+                mas ela parece ter sido atingida por
                 algo que causou um grande buraco na fuselagem. O que devo fazer?</p>
             <button class="btn-proximo" data-proximo="1">[Entrar na nave para investigar]</button>
             <button class="btn-proximo" onclick="sairDoPlaneta()">[Voltar para órbita]</button>
@@ -86,15 +87,36 @@
         </div>
 
         <div class="passo ativo" id="passo-3">
-            <div id="terminal">
-            </div>
-            <p>Ao me aproximar das telas percebo um painel muito parecido com o presente na minha nave, rapidamente
+            <p class="subpasso ativo" id="0">Ao me aproximar das telas percebo um painel muito parecido com o presente
+                na minha nave, rapidamente
                 alcanço o botão verde que, por padrão, é o responsável por reiniciar os sistemas nas naves construídas
                 durante a era da grande evacuação. Ao pressiona-lo, as telas (que não foram destruídas pela queda) ao
                 meu redor se apagam, apenas para acenderem novamente, exibindo uma espécie de terminal. Aparentemente
                 boa parte dos dados foram perdidos durante esse estranho incidente, mas talvez eu possa pesquisar pelas
-                últimas coordenadas inseridas na navegação, que me dariam o destino da frota humana.</p>
-            <button class="btn-proximo" data-proximo="2">[Ir para a cabine de comando]</button>
+                últimas coordenadas inseridas na navegação, que me dariam o destino da frota humana:</p>
+            <div class="subpasso" id="1">
+                <p>
+                    Ao procurar pelo arquivo com as coordenadas recentes, o console exibe a informação de que eu devo
+                    inserir uma senha para acessa-lo. Normalmente, as naves de modelo SR, como essa que caiu, possuem um
+                    modelo padrão de senha para seus arquivos, elas são construídas da seguinte forma: evacSR--[Número
+                    de
+                    letras do nome da nave * 3 primeiros dígitos de seu serial]<br />Essas informações não devem ser
+                    dificieis de encontrar...
+                </p>
+                <div class="inserirSenha">
+                    <input type="text" placeholder="evacSR--XXXX" maxlength="12" id="inputSenha">
+                    <input type="submit" value="Enter" id="enter">
+                </div>
+            </div>
+            <div>
+                <h2>
+                    CONSOLE NORMANDY SR-1
+                </h2>
+                <div id="terminal">
+                </div>
+            </div>
+            <button class="btn-subpasso" data-proximo="1" onclick="continuaTerminal()">[Pesquisar pelas
+                coordenadas]</button>
         </div>
     </main>
 
@@ -112,8 +134,99 @@
     <script src="scriptPlanetas.js"></script>
     <script>/*
 $(window).on('load', function () {
-    $('#myModal').modal('show');
+$('#myModal').modal('show');
 });*/
+
+        var aText = new Array(
+            "$ INICIALIZANDO......",
+            "$ SSV NORMANDY SR-1",
+            "$ SERIAL: 126383",
+            "$ Obtendo dados......",
+            "$ Impossível obter: logs_seguranca",
+            "$ Impossível obter: dados_funcao",
+            "$ Impossível obter: logs_formacao",
+            "$ Impossível obter: logs_comunicacao",
+            "$ Impossível obter: mapas_navegacao",
+            "#########################################",
+            "$ SEJA BEM_VINDO user_rafalindo123!",
+            ">>> get logs_navegacao",
+            "$ Obtendo: logs_navegacao",
+            "$ O arquivo 'logs_navegacao' é protegido por senha,<br /> insira a senha para acessar o arquivo:",
+            ">>> ************",
+            "$ Senha correta! Acessando o arquivo.....",
+            "$ O arquivo 'logs_navegacao' está parcialmente corrompido,<br /> deseja abri-lo mesmo assim?",
+            ">>> Sim"
+        );
+        var iSpeed = 20;
+        var iIndex = 0;
+        var iArrLength = aText[0].length;
+        var iScrollAt = 20;
+        var iTextPos = 0;
+        var sContents = '';
+        var iRow;
+        var tempLength = 11;
+
+        function terminal() {
+
+            sContents = ' ';
+            iRow = Math.max(0, iIndex - iScrollAt);
+            var destination = document.getElementById("terminal");
+
+            while (iRow < iIndex) {
+                sContents += aText[iRow++] + '<br />';
+            }
+            destination.innerHTML = sContents + aText[iIndex].substring(0, iTextPos) + "_";
+
+            if (iTextPos++ == iArrLength) {
+                iTextPos = 0;
+                iIndex++;
+
+                if (iIndex < tempLength) {
+                    iArrLength = aText[iIndex].length;
+                    setTimeout("terminal()", iSpeed);
+                }
+
+            } else {
+                setTimeout("terminal()", iSpeed);
+            }
+
+        }
+
+        function continuaTerminal() {
+            tempLength = 14;
+            terminal();
+        }
+
+        terminal()
+
+        //confere a senha
+        document.getElementById('enter').addEventListener('click', confereSenha);
+
+        document.getElementById('inputSenha').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                confereSenha();
+            }
+        });
+
+        function confereSenha() {
+            let inputSenha = document.getElementById('inputSenha');
+            let senha = inputSenha.value;
+            console.log(senha);
+
+            if (senha == "evacSR--1008" || senha == "evacSR--[1008]") {
+                inputSenha.classList.add("inativo");
+                document.getElementById('enter').classList.add("inativo");
+                tempLength += 3;
+                terminal();
+            } else if (senha !== "" && senha !== "evacSR--1008") {
+                alert("Senha incorreta!");
+            } else if (senha == "") {
+                alert("Insira a senha antes de dar enter!");
+            }
+        }
+
+
+
     </script>
 </body>
 
