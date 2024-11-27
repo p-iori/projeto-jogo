@@ -161,7 +161,7 @@ img {
     font-weight: bold;
     text-align: left;
     align-items: center;
-    
+
 }
 
 .inserirSenha {
@@ -184,5 +184,21 @@ img {
             background-color: var(--th);
             color: #000000;
         }
+    }
+}
+
+.btn-redireciona {
+    border: 1px solid var(--th);
+    background-color: var(--bg);
+    color: var(--th);
+    padding: 16px 72px;
+    position: absolute;
+    top: 80%;
+    left: 42%;
+
+
+    &:hover {
+        background-color: var(--th);
+        color: var(--sc);
     }
 }

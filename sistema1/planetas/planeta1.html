@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Climate+Crisis:YEAR@2012&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="planeta1.css">
+    <link rel="stylesheet" href="planetas.css">
     <title>E S P A Ç O</title>
 </head>
 
@@ -42,7 +42,7 @@
     </div>
 
     <main>
-        <div class="passo" id="passo-0">
+        <div class="passo ativo" id="passo-0">
             <img src="../../imgs/paisagens/paisagemPlaneta1.png" alt="">
             <p>Ao me aproximar, percebo que o objeto metálico se trata, na verdade, de uma nave caída, que se parece
                 muito com uma das naves de escolta humana. Essas naves fora projetadas para acompanhar as grandes naves
@@ -66,7 +66,7 @@
             <img src="../../imgs/navecaida.png" alt="">
             <p>Me dirigo ao buraco na fuselagem, próximo aos motores. Rapidamente percebo que provavelmente ele não foi
                 causado por uma colisão, e sim por algo que atravessou a nave. O que poderia ter acontecido aqui?</p>
-            <button class="btn-proximo" data-proximo="2">[Ir para a cabine de comando]</button>
+            <button class="btn-proximo" data-proximo="1">[Voltar]</button>
         </div>
 
         <div class="passo" id="passo-2">
@@ -76,17 +76,10 @@
                 painel funcionando a partir da geradores de emergência. Aparentemente se trata do sistema de navegação
                 da nave, que deve conter os logs mais recentes de navegação, incluindo as coordenadas inseridas como
                 destino da frota que essa nave escoltava. </p>
-            <button class="btn-proximo" data-proximo="3">[Investigar as telas]</button>
+            <button class="btn-proximo" data-proximo="3" onclick="iniciaTerminal()">[Investigar as telas]</button>
         </div>
 
-        <div class="passo" id="passo-buraco">
-            <img src="../../imgs/navecaida.png" alt="">
-            <p>Me dirigo ao buraco na fuselagem, próximo aos motores. Rapidamente percebo que provavelmente ele não foi
-                causado por uma colisão, e sim por algo que atravessou a nave. O que poderia ter acontecido aqui?</p>
-            <button class="btn-proximo" data-proximo="2">[Ir para a cabine de comando]</button>
-        </div>
-
-        <div class="passo ativo" id="passo-3">
+        <div class="passo" id="passo-3">
             <p class="subpasso ativo" id="0">Ao me aproximar das telas percebo um painel muito parecido com o presente
                 na minha nave, rapidamente
                 alcanço o botão verde que, por padrão, é o responsável por reiniciar os sistemas nas naves construídas
@@ -95,7 +88,7 @@
                 boa parte dos dados foram perdidos durante esse estranho incidente, mas talvez eu possa pesquisar pelas
                 últimas coordenadas inseridas na navegação, que me dariam o destino da frota humana:</p>
             <div class="subpasso" id="1">
-                <p>
+                <p id="texto-subpasso2">
                     Ao procurar pelo arquivo com as coordenadas recentes, o console exibe a informação de que eu devo
                     inserir uma senha para acessa-lo. Normalmente, as naves de modelo SR, como essa que caiu, possuem um
                     modelo padrão de senha para seus arquivos, elas são construídas da seguinte forma: evacSR--[Número
@@ -117,6 +110,8 @@
             </div>
             <button class="btn-subpasso" data-proximo="1" onclick="continuaTerminal()">[Pesquisar pelas
                 coordenadas]</button>
+            <button class="btn-redireciona inativo" id="btn-redireciona-1" onclick="redirecionaCoord1()">[Abrir
+                Arquivo]</button>
         </div>
     </main>
 
@@ -132,10 +127,7 @@
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
     <script src="scriptPlanetas.js"></script>
-    <script>/*
-$(window).on('load', function () {
-$('#myModal').modal('show');
-});*/
+    <script>
 
         var aText = new Array(
             "$ INICIALIZANDO......",
@@ -157,14 +149,14 @@ $('#myModal').modal('show');
             "$ O arquivo 'logs_navegacao' está parcialmente corrompido,<br /> deseja abri-lo mesmo assim?",
             ">>> Sim"
         );
-        var iSpeed = 20;
+        var iSpeed = 40;
         var iIndex = 0;
         var iArrLength = aText[0].length;
         var iScrollAt = 20;
         var iTextPos = 0;
         var sContents = '';
         var iRow;
-        var tempLength = 11;
+        var tempLength = 0;
 
         function terminal() {
 
@@ -199,7 +191,7 @@ $('#myModal').modal('show');
 
         terminal()
 
-        //confere a senha
+        //torna possível a interação com o campo de inserir senha
         document.getElementById('enter').addEventListener('click', confereSenha);
 
         document.getElementById('inputSenha').addEventListener('keypress', function (e) {
@@ -208,6 +200,7 @@ $('#myModal').modal('show');
             }
         });
 
+        //confere se a senha está correta e faz as alterações necessárias na página
         function confereSenha() {
             let inputSenha = document.getElementById('inputSenha');
             let senha = inputSenha.value;
@@ -216,6 +209,8 @@ $('#myModal').modal('show');
             if (senha == "evacSR--1008" || senha == "evacSR--[1008]") {
                 inputSenha.classList.add("inativo");
                 document.getElementById('enter').classList.add("inativo");
+                document.getElementById('texto-subpasso2').classList.add("inativo");
+                document.getElementById('btn-redireciona-1').classList.remove("inativo")
                 tempLength += 3;
                 terminal();
             } else if (senha !== "" && senha !== "evacSR--1008") {
@@ -225,6 +220,14 @@ $('#myModal').modal('show');
             }
         }
 
+        function redirecionaCoord1() {
+            location.replace("fragCoord1.html");
+        }
+
+        function iniciaTerminal(){
+            tempLength = 11;
+            terminal()
+        }
 
 
     </script>

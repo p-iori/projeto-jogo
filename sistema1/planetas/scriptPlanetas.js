@@ -29,4 +29,8 @@ function sairDoPlaneta() {
     location.replace('../planetasIndex.html');
 }
 
+//faz o modal carregar junto com a página
+$(window).on('load', function () {
+    $('#myModal').modal('show');
+});
 
