@@ -155,6 +155,10 @@ img {
     border-radius: 0px 2px 0px 2px;
 }
 
+.imgCratera {
+    width: 45%;
+}
+
 #terminal {
     margin: 2% 0 2% 35%;
     letter-spacing: 4px;
