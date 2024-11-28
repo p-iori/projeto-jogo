@@ -134,7 +134,14 @@ ESTILO DA PAGINA
         left: 50%;
         text-align: left;
     }
+
+    & #textoPequeno-1 {
+        margin-bottom: 2%;
+        text-align: center;
+    }
 }
+
+
 
 .subpasso {
     display: none;
@@ -156,6 +163,10 @@ img {
 }
 
 .imgCratera {
+    width: 45%;
+}
+
+#naveCaida {
     width: 45%;
 }
 
@@ -197,7 +208,7 @@ img {
     color: var(--th);
     padding: 16px 72px;
     position: absolute;
-    top: 80%;
+    top: 84%;
     left: 42%;
 
 

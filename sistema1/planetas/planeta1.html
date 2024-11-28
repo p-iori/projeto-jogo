@@ -45,7 +45,7 @@
         <div class="passo ativo" id="passo-0">
             <img src="../../imgs/paisagens/paisagemPlaneta1.png" alt="">
             <p>Ao me aproximar, percebo que o objeto metálico se trata, na verdade, de uma nave caída, que se parece
-                muito com uma das naves de escolta humana. Essas naves fora projetadas para acompanhar as grandes naves
+                muito com uma das naves de escolta humana. Essas naves foram projetadas para acompanhar as grandes naves
                 de evacuação e auxiliar em caso de emergência, essa em específico é um modelo SR-1, com 3 andares e 60
                 metros de comprimento, pelas inscrições na lateral, ela foi batizada de Normandy. Não vejo cadaveres,
                 mas ela parece ter sido atingida por
@@ -54,8 +54,8 @@
             <button class="btn-proximo" onclick="sairDoPlaneta()">[Voltar para órbita]</button>
         </div>
         <div class="passo" id="passo-1">
-            <img src="../../imgs/navecaida.png" alt="">
-            <p>Após entrar na nave por uma janela quebrada, me encontro no hall principal, completamente destruído pela
+            <img src="../../imgs/navecaida.png" id="naveCaida">
+            <p id="textoPequeno-1">Após entrar na nave por uma janela quebrada, me encontro no hall principal, completamente destruído pela
                 queda...</p>
             <button class="btn-proximo" data-proximo="2">[Ir para a cabine de comando]</button>
             <button class="btn-proximo" data-proximo="buraco">[Ir para o buraco na fuselagem]</button>
@@ -63,14 +63,14 @@
 
         <!--Buraco na fuselagem-->
         <div class="passo" id="passo-buraco">
-            <img src="../../imgs/navecaida.png" alt="">
+            <img src="../../imgs/navecaida.png" id="naveCaida">
             <p>Me dirigo ao buraco na fuselagem, próximo aos motores. Rapidamente percebo que provavelmente ele não foi
-                causado por uma colisão, e sim por algo que atravessou a nave. O que poderia ter acontecido aqui?</p>
+                causado por uma colisão, e sim por algo que atravessou a nave. O buraco parece ter cerca de 2 metros e meio de diâmetro. O que poderia ter acontecido aqui?</p>
             <button class="btn-proximo" data-proximo="1">[Voltar]</button>
         </div>
 
         <div class="passo" id="passo-2">
-            <img src="../../imgs/navecaida.png" alt="">
+            <img src="../../imgs/navecaida.png" id="naveCaida">
             <p>Sigo para a cabine de comando, lá ficam armazenados os dados de navegação, assim como as caixas-pretas da
                 nave. Ao abrir a porta emperrada, com certa dificuldade, me deparo com algumas telas ligadas em um
                 painel funcionando a partir da geradores de emergência. Aparentemente se trata do sistema de navegação
@@ -97,7 +97,7 @@
                     dificieis de encontrar...
                 </p>
                 <div class="inserirSenha">
-                    <input type="text" placeholder="evacSR--XXXX" maxlength="12" id="inputSenha">
+                    <input type="text" placeholder="evacSR--XXXX" maxlength="12" id="inputSenha" autocomplete="off">
                     <input type="submit" value="Enter" id="enter">
                 </div>
             </div>

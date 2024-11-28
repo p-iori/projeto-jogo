@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Climate+Crisis:YEAR@2012&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="planetas.css">
+    <style>
+        body {
+            overflow-y: scroll;
+        }
+
+        main {
+            margin: 12px;
+            text-align: left;
+            margin-block-end: 0;
+        }
+
+        .p {
+            margin-bottom: 0%;
+            margin-block-end: 0;
+            text-align: left;
+
+        }
+
+
+        .instrucoes {
+            color: #e4a700;
+            margin-bottom: 5%;
+        }
+
+        #dica {
+            margin-top: 5%;
+            margin-bottom: 2%;
+        }
+
+
+        .tabela {
+            border: 1px dashed #00FBFF;
+            border-collapse: collapse;
+            padding: 5px;
+            margin: 0 2% 2% 2%;
+        }
+
+        .tabela th {
+            border: 1px dashed #00FBFF;
+            padding: 5px;
+        }
+
+        .tabela td {
+            border: 1px dashed #00FBFF;
+            padding: 5px;
+        }
+
+        .tabelas-wrapper {
+            margin: 2% 0 0 0;
+            display: flex;
+            align-items: left;
+            left: 0;
+        }
+
+        .textos-wrapper {
+            margin: 1% 5% 5% 2%;
+            text-align: left;
+        }
+
+        .btn-audio-wrapper {
+            display: flex;
+            border: 1px solid #00FBFF;
+            width: 50%;
+            justify-content: space-between;
+            margin: 0 auto;
+
+            & .audio-button {
+                background: transparent;
+                border: 1px solid #00FBFF;
+                color: #00FBFF;
+                margin: 1%;
+                padding: 24px 12px;
+            }
+
+            & .audio-button:hover {
+                color: black;
+                background: #00FBFF;
+            }
+        }
+
+        #inputCodigo {
+            background-color: var(--bg);
+            color: var(--th);
+            border: 1px solid var(--th);
+            padding: 8px 36px;
+            font-size: 22px;
+        }
+
+        #enter {
+            background-color: var(--bg);
+            color: var(--th);
+            border: 1px solid var(--th);
+            padding: 8px 16px;
+            font-size: 22px;
+
+            &:hover {
+                background-color: var(--th);
+                color: #000000;
+            }
+        }
+    </style>
+    <title>E S P A Ç O</title>
+</head>
+
+<body>
+
+    <!-- MODAL -->
+
+    <div class="modal hide fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                        Pontos e traços
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span class="fechar" aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Assim que direciono minha nave para o planeta, começo a receber um sinal, através dos meus
+                    comunicadores de curta distância. Confuso e incrédulo, conecto os equipamentos necessários para
+                    escutar a mensagem. Se trata de Código Morse, um método de comunicação criado a milênios para
+                    permitir uma troca de mensagens entre dispositivos primitivos, atualmente, ele é utilizado apenas
+                    para transmissões de emergência, o que me deixa ainda mais preocupado.
+                </div>
+                <div class="modal-footer">
+                    *Você encontrou uma mensagem em código morse! Ouça ao sinal recebido e tente decodificar o resto da
+                    mensagem utilizando as instruções na página. Caso não seja possível ouvir a mensagem, ou decodificar
+                    o código morse, você poderá clicar no botão "Pular etapa" para receber a resposta (não recomendado).
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <p id="explicaMorse">
+            O código Morse é um instrumento de comunicação simples. Ele funciona a base de sons com
+            durações diferentes: Os sons mais longos são representados por traços, enquanto os sons mais curtos são
+            representados por pontos, intervalos maiores entre os sons representam a mudança de uma letra para outra.
+            Aparentemente esse sinal tem origem em uma sonda de comunicação emergencial alocada no planeta. Essas
+            sondas, não tripuladas, são utlizadas caso os sistemas padrão de comunicação sejam cortados, elas são
+            lançadas em direção à bases ou naves alidas e transmitem mensagens pré-programadas, pelo o que parece, essa
+            sonda foi lançada em direção ao planeta e
+            acabou caindo nele, mas continuou transmitindo. Eu já consegui decodificar uma parte da mensagem
+            enviada pela sonda, que diz o seguinte:<br /></p>
+        <h5> "SOS SISTEMAS DE COMUNICAÇÃO CORTADOS" "PONTO DE ENCONTRO
+            LOCALIZADO NO SETOR"...
+        </h5>
+    </main>
+    <div class="tabelas-wrapper">
+        <table class="tabela">
+
+            <thead>
+                <tr>
+                    <th>Alfabeto</th>
+                    <th>Código Morse</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>&nbsp;A</td>
+                    <td>&nbsp;<span>.-</span>
+                    </td>
+                </tr>
+                <tr>
+
+                    <td>&nbsp;B</td>
+                    <td>&nbsp;<span>-...</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;C</td>
+                    <td>&nbsp;<span>-.-.</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;D</td>
+                    <td>&nbsp;<span>-.-.</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;E</td>
+                    <td>&nbsp;<span>.</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;F</td>
+                    <td>&nbsp;<span>..-.</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;G</td>
+                    <td>&nbsp;<span>--.</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;H</td>
+                    <td>&nbsp;<span>....</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;I</td>
+                    <td>&nbsp;<span>..</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;J</td>
+                    <td>&nbsp;<span>.---</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;K</td>
+                    <td>&nbsp;<span>-.-</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;L</td>
+                    <td>&nbsp;<span>.-..</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;M</td>
+                    <td>&nbsp;<span>--</span>
+                    </td>
+                </tr>
+            <tbody>
+        </table>
+
+        <table class="tabela">
+            <thead>
+                <tr>
+                    <th>Alfabeto</th>
+                    <th>Código Morse</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>&nbsp;N</td>
+                    <td>&nbsp;<span>-.</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;O</td>
+                    <td>&nbsp;<span>---</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;P</td>
+                    <td>&nbsp;<span>.--.</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;Q</td>
+                    <td>&nbsp;<span>--.-</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;R</td>
+                    <td>&nbsp;<span>.-.</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;S</td>
+                    <td>&nbsp;<span>...</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;T</td>
+                    <td>&nbsp;<span>-</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;U</td>
+                    <td>&nbsp;<span>..-</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;V</td>
+                    <td>&nbsp;<span>...-</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;W</td>
+                    <td>&nbsp;<span>.--</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;X</td>
+                    <td>&nbsp;<span>-..-</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;Y</td>
+                    <td>&nbsp;<span>-.--</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;Z</td>
+                    <td>&nbsp;<span>--..</span>
+                    </td>
+                </tr>
+            <tbody>
+        </table>
+        <div class="textos-wrapper">
+            <p class="continuaMorse">
+                Aparentemente, o pedaço que resta contém o setor para onde as naves humanas foram, o que representa um
+                pedaço das cordenadas completas. <br />
+            </p>
+            <p class="instrucoes">Clique no botão para reproduzir o áudio, escute o código com atenção e anote as letras
+                que conseguir identificar, ao terminar de transcrever o código, insira-o no campo abaixo e confira se
+                está certo. Caso você erre, pode tentar novamente, caso acerte, anote a resposta e junte-a com os outros
+                fragmentos encontrados nos outros planetas. </p>
+
+            <audio id="player" src="../../audios/codigoMorse.wav"></audio>
+            <div class="btn-audio-wrapper">
+                <button class="audio-button" onclick="document.getElementById('player').play()">Play</button>
+                <button class="audio-button" onclick="document.getElementById('player').pause()">Pause</button>
+                <button class="audio-button"
+                    onclick="document.getElementById('player').currentTime = 0">Recomeçar</button>
+                <button class="audio-button" onclick="document.getElementById('player').volume += 0.3">Vol +</button>
+                <button class="audio-button" onclick="document.getElementById('player').volume -= 0.3">Vol -</button>
+            </div>
+
+            <p class="instrucoes" id="dica">DICA: Anote num papel os traços e pontos que você indentificar e depois use
+                a tabela
+                para transforma-los em letras
+            </p>
+
+            <p>Inserir transcrição</p>
+            <input type="text" placeholder="Ex: xxxx" id="inputCodigo" onclick="validaCodigo()" autocomplete="off">
+            <input type="submit" value="Enter" id="enter">
+
+        </div>
+    </div>
+    <!-- JSQUERY/POPPER/BOOTSTRAP -->
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script>
+
+        document.getElementById('enter').addEventListener('click', confereCodigo);
+
+        document.getElementById('inputCodigo').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                confereCodigo();
+            }
+        });
+
+        function confereCodigo() {
+            let inputCodigo = document.getElementById('inputCodigo');
+            let codigo = inputCodigo.value;
+            console.log(codigo);
+
+            if (codigo == "mark" || codigo == "MARK") {
+                alert("Transcrição correta! Lembre-se desse código pois ele é um dos fragmentos das coordenas.");
+                location.replace('../planetasIndex.html');
+            } else if (codigo !== "" && codigo !== "mark" && codigo !== "MARK") {
+                alert("Transcrição incorreta");
+            } else if (codigo == "") {
+                alert("Insira a código antes de dar enter!");
+            }
+        }
+    </script>
+</body>
+
+</html>
