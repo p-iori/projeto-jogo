@@ -110,6 +110,24 @@
                 color: #000000;
             }
         }
+
+        .revelarResposta {
+            background-color: var(--bg);
+            color: var(--th);
+            border: 1px solid var(--th);
+            padding: 2px 24px;
+            font-size: 10px;
+
+
+            &:hover {
+                background-color: var(--th);
+                color: #000000;
+            }
+        }
+
+        .btn-revelar-wrapper {
+            margin-top: 2%;
+        }
     </style>
     <title>E S P A Ç O</title>
 </head>
@@ -140,7 +158,8 @@
                 <div class="modal-footer">
                     *Você encontrou uma mensagem em código morse! Ouça ao sinal recebido e tente decodificar o resto da
                     mensagem utilizando as instruções na página. Caso não seja possível ouvir a mensagem, ou decodificar
-                    o código morse, você poderá clicar no botão "Pular etapa" para receber a resposta (não recomendado).
+                    o código morse, você poderá clicar no botão "Revelar reposta" para receber a resposta (não
+                    recomendado). Esse planeta contém um pedaço das coordenadas da frota humana.
                 </div>
             </div>
         </div>
@@ -344,6 +363,9 @@
             <input type="text" placeholder="Ex: xxxx" id="inputCodigo" onclick="validaCodigo()" autocomplete="off">
             <input type="submit" value="Enter" id="enter">
 
+            <div class="btn-revelar-wrapper">
+                <button class="revelarResposta" onclick="revelarResposta()">Revelar reposta</button>
+            </div>
         </div>
     </div>
     <!-- JSQUERY/POPPER/BOOTSTRAP -->
@@ -358,6 +380,12 @@
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
     <script>
+        //faz o modal carregar junto com a página
+        $(window).on('load', function () {
+            $('#myModal').modal('show');
+        });
+
+
 
         document.getElementById('enter').addEventListener('click', confereCodigo);
 
@@ -366,6 +394,17 @@
                 confereCodigo();
             }
         });
+
+        function revelarResposta() {
+            confirma = confirm("Deseja revelar a resposta?");
+
+            if (confirma === true) {
+                document.getElementById('inputCodigo').value = "mark";
+                alert("Resposta revelada!");
+            } else if (confirma === false) {
+                return false
+            }
+        }
 
         function confereCodigo() {
             let inputCodigo = document.getElementById('inputCodigo');
