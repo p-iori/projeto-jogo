@@ -10,6 +10,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="planetas.css">
+    <style>
+        body {
+            overflow-y: scroll;
+        }
+    </style>
     <title>E S P A Ç O</title>
 </head>
 
@@ -32,8 +37,8 @@
                 <div class="modal-body">
                     Normalmete, planetas pequenos como esse, longes de sua estrela e com quase nenhuma atmosfera, não
                     estariam no cronograma de paradas de uma frota de evacuação, apesar disso, minha nave me informou
-                    que existem traços de duas naves pequenas pousadas em sua superfície, provavelmente eu deva
-                    investiga-las... </div>
+                    que existem traços de uma nave pequena pousada em sua superfície, provavelmente eu deva
+                    investiga-la... </div>
                 <div class="modal-footer">
                     *Esse planeta contém informações à respeito da história do jogo.
                 </div>
@@ -44,29 +49,30 @@
     <main>
         <div class="passo" id="passo-0">
             <img src="../../imgs/paisagens/paisagemPlaneta4.png" alt="">
-            <p>Chegando ao planeta, encaminho a Marauder em direção às duas naves pousadas, ansioso por fazer contato,
+            <p>Chegando ao planeta, encaminho a Marauder em direção a nave pousada, ansioso por fazer contato,
                 finalmente, com alguém que possa me dizer o que ocorreu aqui, envio diversos sinais de curto alcançe,
                 anunciando minha aproximação, mas não recebo nenhuma resposta. De qualquer forma, não demoro para chegar
                 ao local de interesse.<br />Sem perder as esperanças, pouso a Marauder nas proximidades e, de longe,
-                percebo que
-                uma das naves pertence à classe das pesquisadoras, naves pequenas que levam uma pequena tripulação de
+                percebo que a nave pertence à classe das pesquisadoras, naves pequenas que levam uma pequena tripulação
+                de
                 cientístas e ficam alocadas dentro da nave capitânea da frota, sendo despachadas para realizar
-                experimentos de campo. A segunda nave, por outro lado, não se parece com nenhuma que eu já tenha visto.
+                experimentos de campo.
             </p>
-            <button class="btn-proximo" data-proximo="1">[Investigar as naves]</button>
+            <button class="btn-proximo" data-proximo="1">[Investigar a nave]</button>
         </div>
 
         <div class="passo" id="passo-1">
             <img src="../../imgs/paisagens/paisagemPlaneta4.png" alt="" class="imgCratera">
-            <p>Lentamente, caminho em direção as naves, apararentemente incactas. Conforme vou me aproximando, percebo
-                que muitos dos equipamentos da nave de pesquisa estão espalhados ao seu redor, enquanto a maioria de
-                seus compartimentos se encontra completamente aberta, como se a tripulação tivesse saído às pressas. A
-                nave desconhecida, por sua vez, está contida dentro de um perímetro, estabelecido por meio de quatro
+            <p>Lentamente, caminho em direção a nave, apararentemente incacta. Conforme vou me aproximando, percebo
+                que muitos dos equipamentos dela estão espalhados ao seu redor, enquanto a maioria de
+                seus compartimentos se encontra completamente aberta, como se a tripulação tivesse saído às pressas.
+                Logo ao
+                seu lado, reparo em um perímetro, estabelecido por meio de quatro
                 lasers vermelhos na altura do joelho, normalmente, os cientistas utilizam esses lasers para demarcar
-                áreas de interesse, como áreas de escavação ou estudo. Talvez essa nave fosse desconhecida para os
-                cientístas também.</p>
+                áreas de interesse, como áreas de escavação ou estudo, acontece que aparentemente não existe nada dentro
+                da área demarcada.</p>
             <button class="btn-proximo" data-proximo="nave-humana">[Investigar a nave humana]</button>
-            <button class="btn-proximo" data-proximo="nave-alienigena">[Investigar a nave desconhecida]</button>
+            <button class="btn-proximo" data-proximo="perimetro">[Investigar o perímetro]</button>
         </div>
 
         <div class="passo" id="passo-nave-humana">
@@ -74,8 +80,9 @@
             <p>Me aproximo, por fim, da nave humana, com seus equipamentos e portas completamente escancarados, duvido
                 que ainda resta algo de importante que não esteja no seu computador de bordo, portanto, é para ele que
                 eu me dirijo. Diferentemente de outras categorias, as naves de pesquisa não requerem senha para acessar
-                seus arquivos, então não foi uma tarefa difícil acessa-los. Dentre os arquivos obtidos pelo computador
-                estão seus experimentos, seus estoques, seus arquivos de segurança, e, mais importante, s logs que
+                seus arquivos, então não foi uma tarefa difícil entrar em seus sistemas. Dentre os arquivos obtidos pelo
+                computador
+                estão seus experimentos, seus estoques, seus arquivos de segurança, e, mais importante, os logs que
                 armazenam os dados de seus últimos testes. Esses logs geralmente são transmitidos para as naves maiores
                 poderem acompanhar o trabalho em campo, mas pelo o que parece, a tripulação não chegou a enviar nenhum
                 dos 3 arquivos dessa missão. Provavelmente haverá algo de interessante neles: </p>
@@ -101,7 +108,7 @@
                 <button class="btn-proximo" data-proximo="nave-humana">[Voltar]</button>
             </div>
         </div>
-        <div class="passo ativo" id="passo-arq1">
+        <div class="passo" id="passo-arq2">
             <div class="arquivos">
                 <h1>>>> Arquivo 2: Missão de reconhecimento e pesquisa 27-72</h1>
                 <h2>Pesquisador chefe: Marcos B.</h2>
@@ -111,11 +118,52 @@
                     irregular e com altas concentrações de metal. Nossa hipótese atual é de que se trata de alguma nave
                     descartada por alguma nave de reconhecimento deixada para trás pela equipe, com certeza algo desse
                     tipo seria informado pelo comando da missão.<br /> </p>
-                <h2>(27/213 XX:45) Entrada 2:</h2>
+                <h2>(27/213 XX:33) Entrada 2:</h2>
                 <p>Chegamos as coordenadas informadas. Definitivamente não se trata de uma nave de reconhecimento. O
                     objeto metálico descrito pelos operadores aparentemente se trata, sim, de uma éspecie de nave, mas
-                    não se encaixa em nenhum modelo de</p>
+                    não se encaixa em nenhum modelo fabricado durante a era da grande evacuação. Seguiremos, agora, para
+                    a análise de proximidade.</p>
+                <h2>(27/214 XX:11) Entrada 3:</h2>
+                <p>Após uma breve análise do objeto misterioso, concluímos que a tecnologia utilizada em sua composição
+                    não é humana. Uma descoberta incrivel, nós seriamos os primeiros humanos a ter contato com
+                    alienigenas, ou pelo menos, a tecnologia deles. Já enviamos diversas mensagens ao controle da missão
+                    mas não recebemos nenhuma resposta, será que a tecnologia da nave está afetando nossas comunicações?
+                </p>
+                <h2>(27/214 XX:16) Entrada 4:</h2>
+                <p>A nave possui formato pontiagudo, como um míssel, mas é coberta por placas de algum metal
+                    desconhecido. Possui cor preta fosca e aparentemente apresenta duas entradas: uma maior e outra
+                    menor. Na entrada maior encontramos um cilindro com 2 metros de diametro, com inscrições na lateral
+                    e uma abertura pequena na ponta, voltada para fora da nave. Ainda não encontramos nada que se parece
+                    com uma cabine de comando mas com certeza teremos muito tempo para estudar melhor seu interior assim
+                    que o suporte da missão enviar uma nave maior para reboca-la para a PPO Savior.
+                </p>
                 <button class="btn-proximo" data-proximo="nave-humana">[Voltar]</button>
+            </div>
+            <div class="passo ativo" id="passo-arq3">
+                <div class="arquivos">
+                    <h1>>>> Arquivo 3: Missão de reconhecimento e pesquisa 27-72</h1>
+                    <h2>Pesquisador chefe: Marcos B.</h2>
+                    <h2><br />(27/215 XX:54) Entrada 1:</h2>
+                    <p>Ainda sem sinal do controle da missão. Não sabemos o que pode estar acontecendo, quase dois dias
+                        em campo sem contato seriam mais que suficientes para justificar o envio de uma equipe de
+                        resgate para nossa localização. De qualquer forma, continuaremos estudando a nave</p>
+                    <h2><br />(27/215 XX:27) Entrada 2:</h2>
+                    <p>Ainda não conseguimos mapear o interior da nave completamente, mas fizemos descobertas
+                        interessantes a respeito do cilindro localizado em uma das entradas. O cilindro possui uma
+                        espécie de botão em sua traseira que quando acionado gera uma espécie de feixe luminoso, que sai
+                        em alta velocidade de dentro do cilindro através da abertura mencionada anteriormente. Por
+                        sorte, não havia ninguém próximo quando o feixe foi acionado por um de nossos pesquisadores, já
+                        que o feixe atingiu uma rocha próxima, com força sufiente para destrui-la, lançando diversos
+                        fragmentos de metal pontiagudos no ar. Ainda não sabemos o proposito desse laser, mas
+                        acreditamos que trata-se de uma arma.</p>
+                    <h2><br />(27/216 XX:) Entrada 3:</h2>
+                    <p>Após diversas tentativas de contato com o controle da missão, decidimos apontar um amplificador
+                        digital na direção do local onde a forta está estacionada, sendo essa nossa última tentativa de
+                        descobrir o que pode estar acontecendo antes de partir com a nossa nave. Inicialmente, nós
+                        temiamos que a frota já teria partido, sem nós, mas ao observar o local com o amplificador
+                        descobrimos que a realidade é, na verdade, pior. Pudemos observar diversas  </p>
+                    <button class="btn-proximo" data-proximo="nave-humana">[Voltar]</button>
+                </div>
             </div>
     </main>
 
