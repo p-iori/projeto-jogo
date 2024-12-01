@@ -47,7 +47,7 @@
     </div>
 
     <main>
-        <div class="passo" id="passo-0">
+        <div class="passo ativo" id="passo-0">
             <img src="../../imgs/paisagens/paisagemPlaneta4.png" alt="">
             <p>Chegando ao planeta, encaminho a Marauder em direção a nave pousada, ansioso por fazer contato,
                 finalmente, com alguém que possa me dizer o que ocorreu aqui, envio diversos sinais de curto alcançe,
@@ -63,7 +63,7 @@
 
         <div class="passo" id="passo-1">
             <img src="../../imgs/paisagens/paisagemPlaneta4.png" alt="" class="imgCratera">
-            <p>Lentamente, caminho em direção a nave, apararentemente incacta. Conforme vou me aproximando, percebo
+            <p>Lentamente, caminho em direção a nave, apararentemente intacta. Conforme vou me aproximando, percebo
                 que muitos dos equipamentos dela estão espalhados ao seu redor, enquanto a maioria de
                 seus compartimentos se encontra completamente aberta, como se a tripulação tivesse saído às pressas.
                 Logo ao
@@ -72,23 +72,24 @@
                 áreas de interesse, como áreas de escavação ou estudo, acontece que aparentemente não existe nada dentro
                 da área demarcada.</p>
             <button class="btn-proximo" data-proximo="nave-humana">[Investigar a nave humana]</button>
-            <button class="btn-proximo" data-proximo="perimetro">[Investigar o perímetro]</button>
         </div>
 
         <div class="passo" id="passo-nave-humana">
             <img src="../../imgs/paisagens/paisagemPlaneta4.png" class="imgCratera">
-            <p>Me aproximo, por fim, da nave humana, com seus equipamentos e portas completamente escancarados, duvido
+            <p>Me aproximo, então, da nave humana, com seus equipamentos e portas completamente escancarados, duvido
                 que ainda resta algo de importante que não esteja no seu computador de bordo, portanto, é para ele que
                 eu me dirijo. Diferentemente de outras categorias, as naves de pesquisa não requerem senha para acessar
                 seus arquivos, então não foi uma tarefa difícil entrar em seus sistemas. Dentre os arquivos obtidos pelo
                 computador
-                estão seus experimentos, seus estoques, seus arquivos de segurança, e, mais importante, os logs que
-                armazenam os dados de seus últimos testes. Esses logs geralmente são transmitidos para as naves maiores
+                estão seus experimentos, seus estoques, seus arquivos de segurança, e, mais importante, os arquivos que
+                armazenam os diários do capitão da nave durante a missão. Esses arquivos geralmente são transmitidos
+                para as naves maiores
                 poderem acompanhar o trabalho em campo, mas pelo o que parece, a tripulação não chegou a enviar nenhum
                 dos 3 arquivos dessa missão. Provavelmente haverá algo de interessante neles: </p>
             <button class="btn-proximo" data-proximo="arq1">[Abrir arquivo 1]</button>
             <button class="btn-proximo" data-proximo="arq2">[Abrir arquivo 2]</button>
             <button class="btn-proximo" data-proximo="arq3">[Abrir arquivo 3]</button>
+
         </div>
 
         <div class="passo" id="passo-arq1">
@@ -139,32 +140,41 @@
                 </p>
                 <button class="btn-proximo" data-proximo="nave-humana">[Voltar]</button>
             </div>
-            <div class="passo ativo" id="passo-arq3">
-                <div class="arquivos">
-                    <h1>>>> Arquivo 3: Missão de reconhecimento e pesquisa 27-72</h1>
-                    <h2>Pesquisador chefe: Marcos B.</h2>
-                    <h2><br />(27/215 XX:54) Entrada 1:</h2>
-                    <p>Ainda sem sinal do controle da missão. Não sabemos o que pode estar acontecendo, quase dois dias
-                        em campo sem contato seriam mais que suficientes para justificar o envio de uma equipe de
-                        resgate para nossa localização. De qualquer forma, continuaremos estudando a nave</p>
-                    <h2><br />(27/215 XX:27) Entrada 2:</h2>
-                    <p>Ainda não conseguimos mapear o interior da nave completamente, mas fizemos descobertas
-                        interessantes a respeito do cilindro localizado em uma das entradas. O cilindro possui uma
-                        espécie de botão em sua traseira que quando acionado gera uma espécie de feixe luminoso, que sai
-                        em alta velocidade de dentro do cilindro através da abertura mencionada anteriormente. Por
-                        sorte, não havia ninguém próximo quando o feixe foi acionado por um de nossos pesquisadores, já
-                        que o feixe atingiu uma rocha próxima, com força sufiente para destrui-la, lançando diversos
-                        fragmentos de metal pontiagudos no ar. Ainda não sabemos o proposito desse laser, mas
-                        acreditamos que trata-se de uma arma.</p>
-                    <h2><br />(27/216 XX:) Entrada 3:</h2>
-                    <p>Após diversas tentativas de contato com o controle da missão, decidimos apontar um amplificador
-                        digital na direção do local onde a forta está estacionada, sendo essa nossa última tentativa de
-                        descobrir o que pode estar acontecendo antes de partir com a nossa nave. Inicialmente, nós
-                        temiamos que a frota já teria partido, sem nós, mas ao observar o local com o amplificador
-                        descobrimos que a realidade é, na verdade, pior. Pudemos observar diversas  </p>
-                    <button class="btn-proximo" data-proximo="nave-humana">[Voltar]</button>
-                </div>
+        </div>
+        <div class="passo" id="passo-arq3">
+            <div class="arquivos">
+                <h1>>>> Arquivo 3: Missão de reconhecimento e pesquisa 27-72</h1>
+                <h2>Pesquisador chefe: Marcos B.</h2>
+                <h2><br />(27/215 XX:54) Entrada 1:</h2>
+                <p>Ainda sem sinal do controle da missão. Não sabemos o que pode estar acontecendo, quase dois dias
+                    em campo sem contato seriam mais que suficientes para justificar o envio de uma equipe de
+                    resgate para nossa localização. De qualquer forma, continuaremos estudando a nave</p>
+                <h2><br />(27/215 XX:27) Entrada 2:</h2>
+                <p>Ainda não conseguimos mapear o interior da nave completamente, mas fizemos descobertas
+                    interessantes a respeito do cilindro localizado em uma das entradas. O cilindro possui uma
+                    espécie de botão em sua traseira que quando acionado gera uma espécie de feixe luminoso, que sai
+                    em alta velocidade de dentro do cilindro através da abertura mencionada anteriormente. Por
+                    sorte, não havia ninguém próximo quando o feixe foi acionado por um de nossos pesquisadores, já
+                    que o feixe atingiu uma rocha próxima, com força sufiente para destrui-la, lançando diversos
+                    fragmentos de metal pontiagudos no ar. Ainda não sabemos o proposito desse laser, mas
+                    acreditamos que trata-se de uma arma.</p>
+                <h2><br />(27/216 XX:48) Entrada 3:</h2>
+                <p>Após diversas tentativas de contato com o controle da missão, decidimos apontar um amplificador
+                    digital na direção do local onde a forta está estacionada, sendo essa nossa última tentativa de
+                    descobrir o que pode estar acontecendo antes de partir com a nossa nave. Inicialmente, nós
+                    temiamos que a frota já teria partido, sem nós, mas ao observar o local com o amplificador
+                    descobrimos que a realidade é, na verdade, pior. Observamos diversas explosões e feixes de luz
+                    naquilo que seria a localização atual da frota, aparentemente boa parte das naves grandes da
+                    frota estavam em chamas. Não sabemos o que fazer, não temos recursos para ficar aqui para sempre
+                    e #@$!@$%!#¨&!%# </p>
+                <h2><br />(27/216 XX:54) Entrada 3:</h2>
+                <p>Eles estão aqui. </p>
+
+                <button class="btn-proximo" data-proximo="nave-humana">[Voltar]</button>
+                <button class="btn-proximo" onclick="sairDoPlaneta()">[Voltar para a órbita]</button>
+
             </div>
+
     </main>
 
     <!-- JSQUERY/POPPER/BOOTSTRAP -->
