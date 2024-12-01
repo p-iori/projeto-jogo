@@ -42,12 +42,13 @@
     </div>
 
     <main>
-        <div class="passo ativo" id="passo-0">
+        <div class="passo" id="passo-0">
             <img src="../../imgs/paisagens/paisagemPlaneta4.png" alt="">
             <p>Chegando ao planeta, encaminho a Marauder em direção às duas naves pousadas, ansioso por fazer contato,
                 finalmente, com alguém que possa me dizer o que ocorreu aqui, envio diversos sinais de curto alcançe,
                 anunciando minha aproximação, mas não recebo nenhuma resposta. De qualquer forma, não demoro para chegar
-                ao local de interesse.<br />Sem perder as esperanças, pouso a Marauder nas proximidades e, de longe, percebo que
+                ao local de interesse.<br />Sem perder as esperanças, pouso a Marauder nas proximidades e, de longe,
+                percebo que
                 uma das naves pertence à classe das pesquisadoras, naves pequenas que levam uma pequena tripulação de
                 cientístas e ficam alocadas dentro da nave capitânea da frota, sendo despachadas para realizar
                 experimentos de campo. A segunda nave, por outro lado, não se parece com nenhuma que eu já tenha visto.
@@ -56,32 +57,66 @@
         </div>
 
         <div class="passo" id="passo-1">
-            <img src="../../imgs/crateraPlaneta2.png" alt="" class="imgCratera">
-            <p>Ao pousar no planeta e me dirigiir à uma das marcas de impacto no solo, percebo que por toda a extenção
-                da
-                cratera existem pequenos fragmentos metálicos pontiagudos. Eu não consigo pensar em nada nas naves
-                humanas que possa ter causado isso.<br /> Enquanto analisava um dos pedaços de metal no interior da
-                cratera, um clarão tomou conta do céu. Rapidamente, corri para minha nave, estacionada ao lado, pronto
-                para fugir caso necessário, mas percebi, de dentro da cabine, que o clarão se tratava de um dos
-                destroços caindo da órbita do planeta e entrando na atmosfera. Tenho que tomar uma decisão: Seguir o
-                objeto e tentar encontrar
-                mais respostas, ou voltar para trás e continuar procurando nos outros planetas.</p>
-            <button class="btn-proximo" data-proximo="2">[Ir em direção ao destroço]</button>
-            <button class="btn-proximo" onclick="sairDoPlaneta()">[Voltar para órbita]</button>
+            <img src="../../imgs/paisagens/paisagemPlaneta4.png" alt="" class="imgCratera">
+            <p>Lentamente, caminho em direção as naves, apararentemente incactas. Conforme vou me aproximando, percebo
+                que muitos dos equipamentos da nave de pesquisa estão espalhados ao seu redor, enquanto a maioria de
+                seus compartimentos se encontra completamente aberta, como se a tripulação tivesse saído às pressas. A
+                nave desconhecida, por sua vez, está contida dentro de um perímetro, estabelecido por meio de quatro
+                lasers vermelhos na altura do joelho, normalmente, os cientistas utilizam esses lasers para demarcar
+                áreas de interesse, como áreas de escavação ou estudo. Talvez essa nave fosse desconhecida para os
+                cientístas também.</p>
+            <button class="btn-proximo" data-proximo="nave-humana">[Investigar a nave humana]</button>
+            <button class="btn-proximo" data-proximo="nave-alienigena">[Investigar a nave desconhecida]</button>
         </div>
 
-        <div class="passo" id="passo-2">
-            <img src="../../imgs/crateraPlaneta2.png" class="imgCratera">
-            <p>Imediatamente, decolo com a minha nave e sigo em alta velocidade em direção ao local de impacto do
-                destroço. Quando me aproximo, o local da queda está envolto em chamas e não consigo me aproximar o
-                suficiente do objeto para entender do que se trata. Portanto, estaciono minha nave em uma montanha
-                próxima e
-                começo a observar com o meu amplificador à distância. Em meio às chamas, percebo que se trata de um
-                objeto cilíndrico, aparentemente com uns 2 metros e meio de largura, e que possui inscrições brilhantes,
-                desconhecidas para mim, na sua lateral. Não tenho tempo para esperar as chamas apagarem, e acredito que
-                não vou obter mais informações observando de longe, acho que está na hora de ir...</p>
-            <button class="btn-proximo" onclick="sairDoPlaneta()">[Voltar para órbita]</button>
+        <div class="passo" id="passo-nave-humana">
+            <img src="../../imgs/paisagens/paisagemPlaneta4.png" class="imgCratera">
+            <p>Me aproximo, por fim, da nave humana, com seus equipamentos e portas completamente escancarados, duvido
+                que ainda resta algo de importante que não esteja no seu computador de bordo, portanto, é para ele que
+                eu me dirijo. Diferentemente de outras categorias, as naves de pesquisa não requerem senha para acessar
+                seus arquivos, então não foi uma tarefa difícil acessa-los. Dentre os arquivos obtidos pelo computador
+                estão seus experimentos, seus estoques, seus arquivos de segurança, e, mais importante, s logs que
+                armazenam os dados de seus últimos testes. Esses logs geralmente são transmitidos para as naves maiores
+                poderem acompanhar o trabalho em campo, mas pelo o que parece, a tripulação não chegou a enviar nenhum
+                dos 3 arquivos dessa missão. Provavelmente haverá algo de interessante neles: </p>
+            <button class="btn-proximo" data-proximo="arq1">[Abrir arquivo 1]</button>
+            <button class="btn-proximo" data-proximo="arq2">[Abrir arquivo 2]</button>
+            <button class="btn-proximo" data-proximo="arq3">[Abrir arquivo 3]</button>
         </div>
+
+        <div class="passo" id="passo-arq1">
+            <div class="arquivos">
+                <h1>>>> Arquivo 1: Missão de reconhecimento e pesquisa 27-72.</h1>
+                <h2>Pesquisador chefe: Marcos B.</h2>
+                <h2><br />(27/213 XX:32) Entrada 1:</h2>
+                <p>Fomos despachados para uma missão de reconhecimento em um planeta localizado próximo ao ponto de
+                    parada da frota no sistema. Nossos operadores aparentemente avistaram um objeto metálico sobre sua
+                    suiperfície enquanto faziam uma inspeção de rotina. Eventos como esse não são raros, normalmente,
+                    são falhas geográficas ou formações rochosas incomuns, essa, inclusive, será a quarta missão desse
+                    tipo realizada pela equipe, portanto, não teremos muito trabalho e provavelmente voltaremos bem
+                    antes da frota seguir viagem.<br /><br />DURAÇÃO ESTIMADA DA MISSÃO: 1 dia terrestre.
+                    <br />PERICULOSIDADE: BAIXA.<br />NAVE DESPACHADA: SPV New Frontiers. <br />ESPECIALISTAS: 1
+                    ENGENHEIRO; 2 GEÓLOGOS; 3 PESQUISADORES GERAIS.
+                </p>
+                <button class="btn-proximo" data-proximo="nave-humana">[Voltar]</button>
+            </div>
+        </div>
+        <div class="passo ativo" id="passo-arq1">
+            <div class="arquivos">
+                <h1>>>> Arquivo 2: Missão de reconhecimento e pesquisa 27-72</h1>
+                <h2>Pesquisador chefe: Marcos B.</h2>
+                <h2><br />(27/213 XX:24) Entrada 1:</h2>
+                <p>Estamos nos aproximando das coordenadas passadas pelos operadores dos scanners, aparentemente não se
+                    trata de uma formação rochosa ou algo do tipo, estamos recebendo sinais de um objeto com formato
+                    irregular e com altas concentrações de metal. Nossa hipótese atual é de que se trata de alguma nave
+                    descartada por alguma nave de reconhecimento deixada para trás pela equipe, com certeza algo desse
+                    tipo seria informado pelo comando da missão.<br /> </p>
+                <h2>(27/213 XX:45) Entrada 2:</h2>
+                <p>Chegamos as coordenadas informadas. Definitivamente não se trata de uma nave de reconhecimento. O
+                    objeto metálico descrito pelos operadores aparentemente se trata, sim, de uma éspecie de nave, mas
+                    não se encaixa em nenhum modelo de</p>
+                <button class="btn-proximo" data-proximo="nave-humana">[Voltar]</button>
+            </div>
     </main>
 
     <!-- JSQUERY/POPPER/BOOTSTRAP -->
