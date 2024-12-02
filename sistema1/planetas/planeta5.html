@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Climate+Crisis:YEAR@2012&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="planetas.css">
+    <style>
+        #reiniciarPlaneta {
+            color: rgb(255, 202, 57);
+            border-color: rgb(255, 202, 57);
+
+            &:hover {
+                color: black;
+                background-color: rgb(255, 202, 57);
+            }
+        }
+
+        .btn-proximo-fake {
+            border: 1px solid var(--th);
+            background-color: var(--bg);
+            color: var(--th);
+            padding: 18px 98px;
+
+
+            &:hover {
+                background-color: var(--th);
+                color: var(--sc);
+            }
+        }
+    </style>
+    <title>E S P A Ç O</title>
+</head>
+
+<body>
+
+    <!-- MODAL -->
+
+    <div class="modal hide fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                        Aumentando a potência.
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span class="fechar" aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Quando decidi rumar para esse sistema sabia que esse planeta com certeza seria muito importante,
+                    já que planetas constituídos por oceanos, sem continentes grandes, são perfeitos para a utilização
+                    dos
+                    equipamentos de potencialização de sinal XP34. Esses equipamentos, presentes em quase todas as naves
+                    das frotas, utlizam o sal dos oceanos para potencializar sinais muito fracos que, normalmente, não
+                    poderiam ser detectados pelos nossos recebidores. Meu plano é montar utilizar esses equipamentos em
+                    um dos rasos oceanos do planeta para tentar receber alguma informação da frota humana.</div>
+                <div class="modal-footer">
+                    *Esse planeta contém um pedaço das coordenadas da frota humana
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <div class="passo ativo" id="passo-0">
+            <img src="../../imgs/paisagens/paisagemPlaneta5.png" alt="">
+            <p>Esse planeta contém oceanos muito rasos (em média 1 metro e meio de profundidade), isso o torna ideal
+                para montar os meus equipamentos, portanto, direciono a Marauder para ele. Após um pouso tranquilo, sigo
+                para o armazém da nave e retiro os itens que constituem o kit XP34, mas percebo que é possível que chova
+                durante a instalação. A chuva pode danificar os equipamentos, mas também, pode aumentar ainda mais a
+                potência dos sinais. O que devo fazer?
+            </p>
+            <button class="btn-proximo" data-proximo="esperar">[Esperar a chuva passar]</button>
+            <button class="btn-proximo" data-proximo="chuva">[Montar os equipamentos mesmo assim]</button>
+        </div>
+
+        <div class="passo" id="passo-chuva">
+            <img src="../../imgs/paisagens/paisagemPlaneta5.png" alt="">
+            <p>Decido montar os equipamentos na chuva. Não é a primeira vez que faço isso, já que eu já trabalhava no
+                esforço de evacuação quando eles foram entregues para as frotas, então não devo ter problemas. Levo
+                o kit, constituído por 3 objetos que se parecem com antenas grandes e algumas outras peças pequenas,
+                para fora e imediatamente percebo que os ventos estão muito rápidos, mas decido continuar mesmo assim. O
+                que eu não pude prever é que os ventos em alta velociade, um aviso da tempestade que se aproxima,
+                causariam ondas de tamanho muito maior que o comum. Inicialmente, as ondas não causam grandes problemas,
+                mas rapidamente chegam em uma altura insustentável e começam a atrapalhar a fixação dos equipamentos.
+                Enquanto eu preparo a terceira antena, sou atingido por uma onda muito grande, que acaba me derrubando
+                e, consequentemente, derrubando também o equipamento, causando a sua perda imediata. O kit foi perdido.
+            </p>
+            <button class="btn-proximo" data-proximo="0" id="reiniciarPlaneta">[Reiniciar]</button>
+        </div>
+        <div class="passo" id="passo-esperar">
+            <img src="../../imgs/paisagens/paisagemPlaneta5.png" alt="">
+            <p>A tempestade que se aproximava rapidamente gerou ventos fortes e ondas grandes, com certeza foi uma boa
+                idéia esperar. Assim que a chuva passa, o céu clareia e eu sigo para fora para montar o equipamento. Não
+                é a primeira vez que faço isso, já que eu já trabalhava no esforço de evacuação quando eles foram
+                entregues para as frotas, então não tive problemas para monta-lo...
+            </p>
+            <button class="btn-proximo" data-proximo="eq-ligado">[Ligar o XP34]</button>
+        </div>
+        <div class="passo" id="passo-eq-ligado">
+            <img src="../../imgs/paisagens/paisagemPlaneta5.png" alt="">
+            <p>Ao ligar o equipamento, o XP34 vai começar a receber sinais muito fracos, normalamente enviados pelas
+                naves humanas e que nem deveriam ser acessados de tão longe, meu papel é procurar por algo importante
+                nos sinais recebidos por ele. Pelo o que devo começar? </p>
+            <button class="btn-proximo-fake"
+                onclick="alert('Nenhum pedido de ajuda foi encontrado pelo equipamento');">[Pedidos de ajuda]</button>
+            <button class="btn-proximo-fake"
+                onclick="alert('Nenhuma tentativa de comunicação foi encontrada pelo equipamento');">[Tentativas de
+                comunicação]</button>
+            <button class="btn-proximo" data-proximo="frag-coord"
+                onclick="alert('O equipamento encontrou um sinal!'); location.replace('./fragCoord2.html');">[Coordenadas da frota]</button>
+        </div>
+
+    </main>
+
+    <!-- JSQUERY/POPPER/BOOTSTRAP -->
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="scriptPlanetas.js"></script>
+    <script>
+    </script>
+</body>
+
+</html>
